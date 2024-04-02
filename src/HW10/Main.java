@@ -2,8 +2,7 @@ package HW10;
 
 public class Main {
     public static void main(String[] args) {
-        Person vasea = new Person();
-        vasea.Person("Vasea", 5, 170);
+        Person vasea = new Person("Vasea", 5, 170);
         vasea.printPersonInfo();
 
         Person stas = new Person();

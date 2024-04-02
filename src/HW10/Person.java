@@ -1,11 +1,22 @@
 package HW10;
+/*
+Создайте класс Person с переменными: name, age, height. Для данного класса используйте инкапсуляцию.
+ Длина имени должна быть больше 3 и меньше 15.
+ Возраст должен быть больше 0 и меньше 100 и рост должен быть не меньше 120 и не больше 220.
+ Создайте  метод printPersonInfo, который будет выводить информацию о человеке,
+ при этом не используя переменные класса напрямую.
+В классе Main создайте объект класса Person и вызовите метод printPersonInfo со всеми заполненными значениями.
+ */
 
 public class Person {
     private String name;
     private int age;
     private int height;
 
-    public void Person(String name, int age, int height) {
+    public Person() {
+    }
+
+    public Person(String name, int age, int height) {
 
         int namel = name.length();
 
@@ -14,8 +25,8 @@ public class Person {
             this.age = age;
             this.height = height;
         } else {
-            System.out.println("Invalid data");
-            return;
+            System.err.println("Invalid data");
+
         }
 
 
@@ -25,8 +36,7 @@ public class Person {
         if (0 < age && age < 100) {
             this.age = age;
         } else {
-            System.out.println("Invalid age");
-            return;
+            System.err.println("Invalid age");
         }
 
 
@@ -42,9 +52,7 @@ public class Person {
             this.name = name;
         } else {
             System.out.println("Invalid name");
-            return;
         }
-
     }
 
     public String getName() {
@@ -56,9 +64,7 @@ public class Person {
             this.height = height;
         } else {
             System.out.println("Invalid height");
-            return;
         }
-
     }
 
     public int getHeight() {
@@ -66,6 +72,6 @@ public class Person {
     }
 
     public void printPersonInfo() {
-        System.out.println(name + " " + age + " " + height);
+        System.out.printf("Name: %s Age: %d Height: %d%n", getName(), getAge(), getHeight());
     }
 }
